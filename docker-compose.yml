@@ -1,0 +1,16 @@
+
+# Use this file to deploy the app on a local docker server running the app on port 3000 and
+# the server on port 8080. The database will be running on port 3306.
+
+services:
+  app:
+    container_name: shiny-app
+    platform: ${DOCKER_PLATFORM:-linux/amd64}
+    image: us-west1-docker.pkg.dev/schedule-downloader/oo-registry/game-scheduler:latest
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - ENVIRONMENT=dev
+    ports:
+      - 80:8080
