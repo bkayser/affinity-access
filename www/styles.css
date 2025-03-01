@@ -3,6 +3,19 @@ html, body, .container-fluid, .row, div[role="main"] {
   margin: 0;
 }
 
+body {
+  font-family: 'Inter', sans-serif; /* Example using Inter */
+  /* Or */
+  /* font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; */
+}
+
+h2 {
+    color: #1f8f43;
+    margin: 12px 16px 14px 16px;
+}
+h1, h2, h3, h4 {
+    font-family: 'Montserrat', sans-serif; /* example of using a different font for headings */
+}
 .button, .buttons > button   {
     margin: 2px 0 8px 0;
     padding: 12px 12px 12px 12px;

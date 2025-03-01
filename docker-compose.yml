@@ -4,7 +4,7 @@
 
 services:
   app:
-    container_name: shiny-app
+    container_name: affinity-access
     platform: ${DOCKER_PLATFORM:-linux/amd64}
     image: us-west1-docker.pkg.dev/schedule-downloader/oo-registry/game-scheduler:latest
     build: 

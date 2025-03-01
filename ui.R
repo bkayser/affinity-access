@@ -1,17 +1,22 @@
 library(bslib)
+library(tidyverse)
+source("cloud_storage.R")
 
-selections <- read.csv("URLS.csv")
-LEAGUES <- setNames(selections$url, selections$title)
+gcs_auth(json_file="gcs_auth.json", email="pennybot@gmail.com")
+gcs_global_bucket("production.affinityaccess.live")
 
 ui <- \() fluidPage(
     tags$head(tags$link(rel = "stylesheet", type = "text/css", href = "styles.css")),
     titlePanel("Affinity CSV Schedule Download", "Schedule Utility"),
+    tags$link(rel="preconnect", href="https://fonts.googleapis.com"),
+    tags$meta(name="description", content="Welcome to AffinityAccess.live!"),
+        
     sidebarLayout(
         sidebarPanel(width=4,
             selectizeInput(
-                "scUrl",
+                "scheduleKey",
                 "Select a known schedule:",
-                choices = LEAGUES,
+                choices = getLiveScheduleList(),
                 options = list(create = TRUE, # Makes it editable
                                maxItems=1,
                                placeholder="Choose a known schedule")

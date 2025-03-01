@@ -5,12 +5,10 @@ FROM rocker/shiny-verse
 WORKDIR /home/shiny
 
 # Install R dependencies
-RUN R -e "install.packages(c('DT', 'shinycssloaders', 'bslib', 'shinyjs', 'shinybusy', 'XML', 'rvest', 'httr'))"
-RUN R -e "install.packages(c('shinyalert'))"
-RUN R -e "install.packages('googleCloudStorageR')"
+RUN R -e "install.packages(c('DT', 'markdown', 'shinyalert', 'googleCloudStorageR', 'shinycssloaders', 'bslib', 'shinyjs', 'shinybusy', 'XML', 'rvest', 'httr'))"
 
 # Copy the Shiny app code
-COPY *.R URLS.csv .
+COPY *.R gcs_auth.json About.md .
 COPY www/ www
 
 # Expose the application port

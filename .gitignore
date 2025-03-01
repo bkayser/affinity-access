@@ -47,3 +47,6 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+/gcs_auth.json
+/URLS.RData
+/schedules
