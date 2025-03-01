@@ -41,6 +41,10 @@ file.
 * All schedules are cached internally and updated once a day.  It
   takes a while to download the schedule the first time.
 
+#### Source
+
+The [source for AffinityAccess.live](https://github.com/bkayser/affinity-access) is available on github under GPL version 3.
+
 #### Acknowledgements
 
 This utility is provided as a convenience for Oregon Youth Soccer
